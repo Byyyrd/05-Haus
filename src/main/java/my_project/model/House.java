@@ -1,13 +1,11 @@
 package my_project.model;
 
-import KAGO_framework.control.ViewController;
 import KAGO_framework.model.GraphicalObject;
-import KAGO_framework.model.InteractiveGraphicalObject;
 import KAGO_framework.view.DrawTool;
 
 import java.awt.*;
 
-public class House extends InteractiveGraphicalObject {
+public class House extends GraphicalObject {
     int width = 100;
     int height = 100;
     int speed = 100;
@@ -19,21 +17,12 @@ public class House extends InteractiveGraphicalObject {
         this.speed = speed;
     }
     public void draw(DrawTool drawTool){
-        //Himmel
-        drawTool.setCurrentColor(new Color(82, 153, 227));
-        drawTool.drawFilledRectangle(0,0,600,300);
-        //Grass
-        drawTool.setCurrentColor(new Color(37, 76, 37));
-        drawTool.drawFilledRectangle(0,y+100,600,300);
-        //Sun
-        drawTool.setCurrentColor(Color.yellow);
-        drawTool.drawFilledCircle(0,0,100);
+
         //Schornstein
         drawTool.setCurrentColor(new Color(24, 24, 24));
         drawTool.drawFilledRectangle(x+width/8,y-height/2,width/4,height/2);
         drawTool.setCurrentColor(new Color(0, 0, 0));
         drawTool.drawRectangle(x+width/8,y-height/2,width/4,height/2);
-
 
         // House Base
         drawTool.setCurrentColor(209,188,138,255);
@@ -43,7 +32,7 @@ public class House extends InteractiveGraphicalObject {
 
         // Outline
         drawTool.setCurrentColor(0,0,0,255);
-        drawTool.drawRectangle(x,y,width,height);;
+        drawTool.drawRectangle(x,y,width,height);
         drawTool.drawTriangle(x,y,x+width,y,x+width/2,y-height/2);
 
 
@@ -77,17 +66,6 @@ public class House extends InteractiveGraphicalObject {
 
     }
     public void update(double dt){
-       if(ViewController.isKeyDown(87)){//Up
-            y -= speed * dt;
-        }
-        if(ViewController.isKeyDown(83)){//Down
-            y += speed * dt;
-        }
-        if(ViewController.isKeyDown(65)){//Left
-            x -= speed * dt;
-        }
-        if(ViewController.isKeyDown(68)){//Right
-            x += speed * dt;
-        }
+
     }
 }
