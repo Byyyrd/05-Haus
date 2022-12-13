@@ -48,6 +48,5 @@ public class DrawingPanel extends JPanel  {
         drawTool.setGraphics2D(g2d,this);
         viewController.drawAndUpdateObjects(drawTool);
     }
-
 }
 

@@ -3,9 +3,11 @@ package my_project.control;
 import KAGO_framework.control.Drawable;
 import KAGO_framework.control.ViewController;
 import KAGO_framework.model.abitur.datenstrukturen.Queue;
+import KAGO_framework.view.DrawTool;
 import my_project.model.*;
 import my_project.view.InputManager;
 
+import javax.swing.text.View;
 import java.awt.event.MouseEvent;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -47,8 +49,11 @@ public class ProgramController {
         Scene.add(new House(200,200,150,150,500));
         Scene.add(new Fence(0,0));
         Scene.add(new Plane(800,200,50,500));
+        Scene.add(new Plane(800,200,25,250));
+        Scene.add(new Plane(800,200,12,125));
+        Scene.add(new Plane(800,200,6,62));
         for(int i = 0;i < 4;i++){
-            Scene.add(new Cloud(i*200-200,50));
+            Scene.add(new Cloud(i*200-200,(int)(Math.random()*51+15)));
         }
 
         for (Object d:Scene) {

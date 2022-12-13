@@ -17,6 +17,8 @@ public class Plane extends InteractiveGraphicalObject {
     }
 
     public void draw(DrawTool drawTool) {
+        drawTool.getGraphics2D().rotate(50);
+
         //Body//
         drawTool.setCurrentColor(100, 149, 237, 255);
         drawTool.drawFilledEllipse(x, y + g / 4, g - g / 4, g / 4);
@@ -60,6 +62,7 @@ public class Plane extends InteractiveGraphicalObject {
         drawTool.drawPolygon(x + g / 2, y + g / 4, x + g * 2, y + g / 4, x + g * 2, y + 2 * g);
         drawTool.drawRectangle(x + g * 2, y + g / 4, g / 2, g * 1.75);
 
+        drawTool.getGraphics2D().rotate(-50);
     }
 
     public void window(double x, double y, double g, DrawTool drawTool) {

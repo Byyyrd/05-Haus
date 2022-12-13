@@ -3,12 +3,16 @@ package my_project.model;
 import KAGO_framework.model.GraphicalObject;
 import KAGO_framework.view.DrawTool;
 
+import java.awt.*;
+
 public class Cloud extends GraphicalObject {
     double clouds;
+    double rotation;
     public Cloud(int x, int y){
         this.clouds = clouds;
         this.x = x;
         this.y = y;
+
     }
     public void draw(DrawTool drawTool){
         drawTool.setCurrentColor(255,255,255,255);
